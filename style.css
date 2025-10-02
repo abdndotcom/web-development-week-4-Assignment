@@ -1,0 +1,102 @@
+/* ========== Global Styles ========== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+header, nav, footer {
+  padding: 1rem;
+  color: white;
+  background-color: #333;
+}
+
+header h1, footer p {
+  margin: 0;
+  text-align: center;
+}
+
+/* ========== Navigation (Flexbox) ========== */
+.nav-links {
+  display: flex;               /* Flexbox used */
+  justify-content: center;     /* Space links evenly */
+  gap: 1.5rem;                 /* Spacing between items */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* ========== Main Layout (Grid) ========== */
+.grid-layout {
+  display: grid;                          /* Grid used */
+  grid-template-columns: 3fr 1fr;         /* Content + Sidebar */
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.content {
+  background: #f4f4f4;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.sidebar {
+  background: #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* ========== Cards (Flexbox inside Content) ========== */
+.card-container {
+  display: flex;              /* Flexbox used */
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.card {
+  flex: 1;                     /* Each card takes equal space */
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 5px;
+}
+
+/* ========== Footer ========== */
+footer {
+  text-align: center;
+}
+
+/* ========== Responsive Design (Media Queries) ========== */
+
+/* Tablet (≤ 768px) */
+@media (max-width: 768px) {
+  .grid-layout {
+    grid-template-columns: 2fr 1fr;  /* Slightly smaller sidebar */
+  }
+
+  .card-container {
+    flex-direction: column;          /* Stack cards */
+  }
+}
+
+/* Mobile (≤ 480px) */
+@media (max-width: 480px) {
+  .grid-layout {
+    grid-template-columns: 1fr;      /* Sidebar below content */
+  }
+
+  nav .nav-links {
+    flex-direction: column;          /* Stack nav links vertically */
+    align-items: center;
+  }
+}
